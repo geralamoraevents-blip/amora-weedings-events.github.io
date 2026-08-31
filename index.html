@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Amora Wedding Planner & Events</title>
+
+  <meta name="description" content="Amora Wedding Planner & Events — pequenos detalhes, grandes histórias. Criamos e coordenamos casamentos e eventos pensados para marcar a diferença.">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+    :root {
+      --creme: #f5eee6;
+      --creme-claro: #fbf7f2;
+      --verde: #3f4125;
+      --terracota: #b86643;
+      --ameixa: #35233a;
+      --texto: #38372f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--creme-claro);
+      color: var(--texto);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* MENU */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 6%;
+      background: rgba(251, 247, 242, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(63, 65, 37, 0.08);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      letter-spacing: 5px;
+      color: var(--verde);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--verde);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--terracota);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      padding: 150px 6% 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at center, rgba(184,102,67,0.06), transparent 45%),
+        var(--creme);
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero-logo {
+      width: min(420px, 75vw);
+      margin-bottom: 35px;
+    }
+
+    .eyebrow {
+      color: var(--terracota);
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 7vw, 88px);
+      font-weight: 400;
+      line-height: 0.95;
+      color: var(--verde);
+      margin-bottom: 30px;
+    }
+
+    .hero-text {
+      max-width: 650px;
+      margin: auto;
+      font-size: 16px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 14px 30px;
+      border: 1px solid var(--terracota);
+      color: var(--terracota);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: var(--terracota);
+      color: white;
+    }
+
+    /* SECÇÕES */
+
+    section {
+      padding: 110px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title span {
+      display: block;
+      color: var(--terracota);
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 6vw, 70px);
+      font-weight: 400;
+      color: var(--verde);
+      line-height: 1;
+    }
+
+    .section-title p {
+      max-width: 650px;
+      margin: 25px auto 0;
+    }
+
+    /* PORQUÊ AMORA */
+
+    .about-amora {
+      background: var(--creme-claro);
+    }
+
+    .amora-intro {
+      max-width: 750px;
+      margin: auto;
+      text-align: center;
+      font-size: 17px;
+    }
+
+    .amora-intro strong {
+      color: var(--terracota);
+      font-weight: 500;
+    }
+
+    .values {
+      max-width: 1000px;
+      margin: 70px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 45px;
+    }
+
+    .value {
+      text-align: center;
+    }
+
+    .value-number {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--terracota);
+      font-size: 36px;
+    }
+
+    .value h3 {
+      color: var(--verde);
+      letter-spacing: 2px;
+      font-size: 13px;
+      text-transform: uppercase;
+      margin: 8px 0;
+    }
+
+    .value p {
+      font-size: 13px;
+    }
+
+    /* SERVIÇOS */
+
+    .services {
+      background: var(--creme);
+    }
+
+    .service-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .service-card {
+      padding: 55px 45px;
+      border: 1px solid rgba(63, 65, 37, 0.15);
+      background: rgba(255,255,255,0.22);
+      text-align: center;
+    }
+
+    .service-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 43px;
+      color: var(--verde);
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .service-card ul {
+      list-style: none;
+      margin-top: 25px;
+    }
+
+    .service-card li {
+      margin: 8px 0;
+      font-size: 13px;
+    }
+
+    .service-card li::before {
+      content: "•";
+      color: var(--terracota);
+      margin-right: 8px;
+    }
+
+    /* PROCESSO */
+
+    .process {
+      background: var(--verde);
+      color: var(--creme);
+    }
+
+    .process .section-title h2,
+    .process .section-title span {
+      color: var(--creme);
+    }
+
+    .process-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 20px 5px;
+    }
+
+    .process-step .number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      color: #d49a7e;
+    }
+
+    .process-step h3 {
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .portfolio-placeholder {
+      aspect-ratio: 4 / 5;
+      background: #e8ddd2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--verde);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+    }
+
+    /* SOBRE */
+
+    .team {
+      background: var(--creme);
+      text-align: center;
+    }
+
+    .team-text {
+      max-width: 750px;
+      margin: auto;
+      font-size: 16px;
+    }
+
+    .signature {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      color: var(--terracota);
+      margin-top: 35px;
+    }
+
+    /* CONTACTO */
+
+    .contact {
+      text-align: center;
+      background: var(--creme-claro);
+    }
+
+    .contact-text {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 55px 7%;
+      background: var(--verde);
+      color: var(--creme);
+      text-align: center;
+    }
+
+    footer .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      letter-spacing: 7px;
+    }
+
+    footer p {
+      margin-top: 10px;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      header {
+        padding: 15px 5%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      section {
+        padding: 80px 6%;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-logo {
+        width: min(350px, 85vw);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="#" class="nav-logo">AMORA</a>
+
+    <ul class="nav-links">
+      <li><a href="#amora">Sobre</a></li>
+      <li><a href="#servicos">Weddings</a></li>
+      <li><a href="#servicos">Events</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contacto">Contactos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <img
+        src="Logotipo%201.png"
+        alt="Amora Wedding Planner & Events"
+        class="hero-logo"
+      >
+
+      <div class="eyebrow">Wedding Planner & Events</div>
+
+      <h1>
+        Pequenos detalhes.<br>
+        Grandes histórias.
+      </h1>
+
+      <p class="hero-text">
+        Planeamos, criamos e coordenamos casamentos e eventos
+        pensados ao detalhe — com identidade, intenção e significado.
+      </p>
+
+      <a href="#contacto" class="button">
+        Conhecer a Amora
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <section id="amora" class="about-amora">
+
+    <div class="section-title">
+      <span>Porquê</span>
+      <h2>AMORA?</h2>
+    </div>
+
+    <div class="amora-intro">
+
+      <p>
+        <strong>Porque uma Amora nunca é apenas uma parte.</strong>
+      </p>
+
+      <br>
+
+      <p>
+        É feita de pequenos detalhes, unidos para criar algo único.
+        É exatamente assim que vemos cada casamento e cada evento:
+        uma combinação de pessoas, histórias, ideias, escolhas e
+        emoções que, juntas, formam algo maior.
+      </p>
+
+    </div>
+
+    <div class="values">
+
+      <div class="value">
+        <div class="value-number">01</div>
+        <h3>Uma ideia</h3>
+        <p>Tudo começa com uma ideia.</p>
+      </div>
+
+      <div class="value">
+        <div class="value-number">02</div>
+        <h3>Paixão</h3>
+        <p>O que nos move é criar momentos especiais.</p>
+      </div>
+
+      <div class="value">
+        <div class="value-number">03</div>
+        <h3>Pessoas</h3>
+        <p>Cada pessoa certa faz toda a diferença.</p>
+      </div>
+
+      <div class="value">
+        <div class="value-number">04</div>
+        <h3>Detalhes</h3>
+        <p>São os pequenos detalhes que tornam tudo inesquecível.</p>
+      </div>
+
+      <div class="value">
+        <div class="value-number">05</div>
+        <h3>União</h3>
+        <p>Pequenas partes que, juntas, formam algo único.</p>
+      </div>
+
+      <div class="value">
+        <div class="value-number">06</div>
+        <h3>Memórias</h3>
+        <p>Momentos que ficam e histórias que duram.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="servicos" class="services">
+
+    <div class="section-title">
+      <span>O que fazemos</span>
+      <h2>Experiências únicas</h2>
+
+      <p>
+        Transformamos ideias em celebrações com personalidade,
+        planeadas e coordenadas ao detalhe.
+      </p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+
+        <h3>Weddings</h3>
+
+        <p>
+          Do primeiro sonho ao último detalhe,
+          acompanhamos os noivos ao longo de todo o processo.
+        </p>
+
+        <ul>
+          <li>Wedding Planning</li>
+          <li>Planeamento integral</li>
+          <li>Planeamento parcial</li>
+          <li>Coordenação do dia</li>
+          <li>Design & Concept</li>
+          <li>Gestão de fornecedores</li>
+          <li>Styling & decoração</li>
+        </ul>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <h3>Events</h3>
+
+        <p>
+          Criamos celebrações pensadas para serem vividas
+          e recordadas.
+        </p>
+
+        <ul>
+          <li>Aniversários</li>
+          <li>Batizados</li>
+          <li>Jantares especiais</li>
+          <li>Baby showers</li>
+          <li>Festas privadas</li>
+          <li>Celebrações familiares</li>
+          <li>Eventos personalizados</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="process">
+
+    <div class="section-title">
+      <span>O nosso processo</span>
+      <h2>Do sonho à memória</h2>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-step">
+        <div class="number">01</div>
+        <h3>Ideia</h3>
+      </div>
+
+      <div class="process-step">
+        <div class="number">02</div>
+        <h3>Conceito</h3>
+      </div>
+
+      <div class="process-step">
+        <div class="number">03</div>
+        <h3>Planeamento</h3>
+      </div>
+
+      <div class="process-step">
+        <div class="number">04</div>
+        <h3>Detalhes</h3>
+      </div>
+
+      <div class="process-step">
+        <div class="number">05</div>
+        <h3>Momento</h3>
+      </div>
+
+      <div class="process-step">
+        <div class="number">06</div>
+        <h3>Memória</h3>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="portfolio">
+
+    <div class="section-title">
+      <span>Histórias que já vivemos</span>
+      <h2>Portfolio</h2>
+
+      <p>
+        Cada celebração tem uma história.
+        Aqui ficam algumas das que tivemos o privilégio de acompanhar.
+      </p>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <div class="portfolio-placeholder">
+        Em breve
+      </div>
+
+      <div class="portfolio-placeholder">
+        Em breve
+      </div>
+
+      <div class="portfolio-placeholder">
+        Em breve
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="team">
+
+    <div class="section-title">
+      <span>Por trás da Amora</span>
+      <h2>Há pessoas.</h2>
+    </div>
+
+    <div class="team-text">
+
+      <p>
+        Somos uma equipa com energia, criatividade e vontade
+        de fazer acontecer.
+      </p>
+
+      <br>
+
+      <p>
+        Gostamos de ouvir, imaginar, planear e encontrar soluções.
+        Porque acreditamos que cada celebração deve ter identidade
+        própria e que são os pequenos detalhes que transformam
+        um momento numa memória.
+      </p>
+
+      <div class="signature">
+        Não queremos fazer igual.<br>
+        Queremos marcar a diferença.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="contacto" class="contact">
+
+    <div class="section-title">
+      <span>Vamos começar?</span>
+      <h2>Vamos criar?</h2>
+    </div>
+
+    <div class="contact-text">
+
+      <p>
+        Conte-nos a sua ideia.
+        Nós tratamos de transformar o sonho em realidade.
+      </p>
+
+      <a
+        href="mailto:ola@amora-weddings-events.pt"
+        class="button"
+      >
+        Falar connosco
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">AMORA</div>
+
+  <p>WEDDING PLANNER & EVENTS</p>
+
+  <p>
+    Pequenos detalhes, grandes histórias.
+  </p>
+
+</footer>
+
+</body>
+</html>
