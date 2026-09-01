@@ -1,1890 +1,1567 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>AMORA — Wedding Planner & Events</title>
-
-<meta name="description"
-content="AMORA — Wedding Planner & Events. Pequenos detalhes. Grandes histórias.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* =====================================================
-   AMORA
-   VISUAL IDENTITY
-===================================================== */
+:root{
+  --cream:#F1E0D1;
+  --cream2:#F7EEE7;
+  --olive:#626548;
+  --olive-dark:#4E5139;
+  --plum:#4A263F;
+  --plum2:#5A304D;
+  --terracotta:#B85E3C;
+  --ink:#2E2D27;
+  --white:#FFF9F5;
+}
 
-:root {
+*{
+  box-sizing:border-box;
+}
 
-    --logo-bg: #F1E0D1;
-    --cream: #F8F4EE;
-    --cream-dark: #EDE4DA;
+html{
+  scroll-behavior:smooth;
+}
 
-    --olive: #4B5038;
-    --olive-light: #74785D;
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--cream);
+  font-family:Manrope,Arial,sans-serif;
+  font-weight:300;
+}
 
-    --terracotta: #B86D4C;
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
-    --plum: #473547;
-    --plum-light: #624D60;
-
-    --text: #302F2B;
-
-    --white: #FFFFFF;
-
+img{
+  max-width:100%;
+  display:block;
 }
 
 
-/* =====================================================
-   RESET
-===================================================== */
+/* =========================
+   NAV
+========================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.nav{
+  position:fixed;
+  inset:0 0 auto 0;
+  z-index:50;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 4vw;
+  mix-blend-mode:multiply;
 }
 
-html {
-    scroll-behavior: smooth;
+.nav:after{
+  content:"";
+  position:absolute;
+  left:4vw;
+  right:4vw;
+  bottom:0;
+  height:1px;
+  background:rgba(46,45,39,.10);
 }
 
-body {
-
-    background: var(--cream);
-
-    color: var(--text);
-
-    font-family: "Montserrat", sans-serif;
-
-    font-weight: 300;
-
-    line-height: 1.7;
-
+.nav-brand{
+  font-family:"Cormorant Garamond",serif;
+  font-size:26px;
+  letter-spacing:.16em;
 }
 
-img {
-    max-width: 100%;
-    display: block;
+.nav-links{
+  display:flex;
+  gap:28px;
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+.nav-links a{
+  opacity:.75;
+  transition:.25s;
 }
 
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-.nav {
-
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
-    z-index: 1000;
-
-    background: rgba(248,244,238,.94);
-
-    backdrop-filter: blur(14px);
-
-    border-bottom: 1px solid rgba(75,80,56,.12);
-
-}
-
-.nav-inner {
-
-    max-width: 1450px;
-
-    height: 82px;
-
-    margin: auto;
-
-    padding: 0 45px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-}
-
-.nav-brand {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 30px;
-
-    letter-spacing: .18em;
-
-    color: var(--olive);
-
-}
-
-.nav-links {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 34px;
-
-    font-size: 10px;
-
-    letter-spacing: .18em;
-
-    text-transform: uppercase;
-
-}
-
-.nav-links a {
-
-    position: relative;
-
-}
-
-.nav-links a::after {
-
-    content: "";
-
-    position: absolute;
-
-    bottom: -7px;
-
-    left: 0;
-
-    width: 0;
-
-    height: 1px;
-
-    background: var(--terracotta);
-
-    transition: .3s;
-
-}
-
-.nav-links a:hover::after {
-
-    width: 100%;
-
+.nav-links a:hover{
+  opacity:1;
 }
 
 
-/* =====================================================
-   HERO
-===================================================== */
+/* =========================
+   CAPA
+========================= */
 
-.hero {
-
-    min-height: 100vh;
-
-    padding: 130px 25px 90px;
-
-    background: var(--logo-bg);
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
+.hero-editorial{
+  min-height:100vh;
+  padding:110px 5vw 70px;
+  position:relative;
+  overflow:hidden;
+  background:var(--cream);
 }
 
-.hero-inner {
-
-    width: 100%;
-
-    max-width: 1150px;
-
+.hero-editorial-inner{
+  min-height:calc(100vh - 180px);
+  max-width:1400px;
+  margin:auto;
+  position:relative;
 }
 
-.hero-kicker {
-
-    margin-bottom: 25px;
-
-    font-size: 9px;
-
-    letter-spacing: .38em;
-
-    text-transform: uppercase;
-
-    color: var(--terracotta);
-
+.hero-brand{
+  position:absolute;
+  left:2%;
+  top:10%;
+  width:58%;
+  z-index:10;
 }
 
-.hero-logo {
-
-    width: min(720px, 90vw);
-
-    margin: 0 auto 48px;
-
+.hero-kicker{
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--terracotta);
+  margin-bottom:26px;
 }
 
-.hero-title {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-weight: 400;
-
-    font-size: clamp(48px, 6vw, 82px);
-
-    line-height: .95;
-
-    color: var(--olive);
-
+.hero-logo{
+  width:min(620px,92%);
+  margin:0;
+  position:relative;
+  z-index:12;
 }
 
-.hero-title span {
-
-    color: var(--plum);
-
-    font-style: italic;
-
+.hero-title{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(52px,6.2vw,88px);
+  line-height:.9;
+  font-weight:400;
+  margin:36px 0 0;
+  letter-spacing:-.035em;
+  position:relative;
+  z-index:12;
 }
 
-.hero-copy {
+.hero-title em{
+  font-style:italic;
+  color:var(--plum);
+}
 
-    max-width: 600px;
-
-    margin: 30px auto 0;
-
-    font-size: 13px;
-
-    line-height: 2;
-
+.hero-sub{
+  margin-top:22px;
+  max-width:430px;
+  font-size:13px;
+  line-height:1.8;
+  position:relative;
+  z-index:12;
 }
 
 
-/* =====================================================
-   HERO IMAGE
-===================================================== */
+/* BLOCOS DE COR */
 
-.hero-image {
+.hero-block{
+  position:absolute;
+  border-radius:0;
+  pointer-events:none;
+  will-change:transform;
+}
 
-    height: 82vh;
+.hero-block.one{
+  width:46%;
+  height:72%;
+  right:0;
+  top:7%;
+  background:var(--olive);
+  z-index:1;
+  transform:rotate(-1deg);
+  animation:floatOne 9s ease-in-out infinite alternate;
+}
 
-    min-height: 580px;
+.hero-block.two{
+  width:31%;
+  height:37%;
+  right:31%;
+  bottom:4%;
+  background:var(--plum);
+  z-index:3;
+  animation:floatTwo 10s ease-in-out infinite alternate;
+}
 
-    width: 100%;
+.hero-block.three{
+  width:18%;
+  height:24%;
+  right:-1%;
+  bottom:0;
+  background:var(--terracotta);
+  z-index:4;
+  animation:floatThree 8s ease-in-out infinite alternate;
+}
 
-    background-image:
-    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2400&q=90");
+.hero-block.four{
+  width:14%;
+  height:16%;
+  right:39%;
+  top:5%;
+  background:var(--cream2);
+  z-index:2;
+  border:1px solid rgba(46,45,39,.06);
+  animation:floatFour 11s ease-in-out infinite alternate;
+}
 
-    background-size: cover;
+.hero-word{
+  position:absolute;
+  right:4.5%;
+  top:27%;
+  z-index:5;
+  color:var(--white);
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(58px,7.2vw,108px);
+  line-height:.8;
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+  opacity:.92;
+  pointer-events:none;
+}
 
-    background-position: center;
+.hero-scroll{
+  position:absolute;
+  left:2%;
+  bottom:0;
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  z-index:15;
+}
 
+.hero-scroll:before{
+  content:"";
+  width:45px;
+  height:1px;
+  background:var(--terracotta);
 }
 
 
-/* =====================================================
-   GENERAL
-===================================================== */
+/* =========================
+   GERAL
+========================= */
 
-.section {
-
-    padding: 150px 45px;
-
+.section{
+  padding:120px 5vw;
+  position:relative;
+  overflow:hidden;
 }
 
-.section-inner {
-
-    max-width: 1350px;
-
-    margin: auto;
-
+.section-inner{
+  max-width:1200px;
+  margin:auto;
 }
 
-.label {
-
-    font-size: 9px;
-
-    letter-spacing: .35em;
-
-    text-transform: uppercase;
-
-    color: var(--terracotta);
-
-    margin-bottom: 22px;
-
+.label{
+  font-size:10px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  margin-bottom:24px;
+  opacity:.7;
 }
 
-.heading {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-weight: 400;
-
-    font-size: clamp(50px, 5.5vw, 82px);
-
-    line-height: .95;
-
-    color: var(--olive);
-
+.heading{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(50px,6vw,86px);
+  line-height:.92;
+  font-weight:400;
+  letter-spacing:-.03em;
+  margin:0 0 34px;
 }
 
-.body-copy {
-
-    font-size: 14px;
-
-    line-height: 2;
-
+.line{
+  width:65px;
+  height:1px;
+  background:currentColor;
+  margin:30px 0;
 }
 
-.line {
-
-    width: 65px;
-
-    height: 1px;
-
-    background: var(--terracotta);
-
-    margin: 30px 0;
-
+.copy{
+  max-width:620px;
+  font-size:15px;
+  line-height:1.9;
 }
 
 
-/* =====================================================
+/* =========================
    THE AMORA WAY
-===================================================== */
+========================= */
 
-.way {
-
-    background: var(--cream);
-
+.way{
+  background:var(--olive);
+  color:var(--white);
 }
 
-.way-layout {
-
-    display: grid;
-
-    grid-template-columns: .9fr 1fr;
-
-    gap: 130px;
-
-    align-items: center;
-
+.way-layout{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:9vw;
+  align-items:end;
 }
 
-.way-copy {
-
-    max-width: 580px;
-
+.way .heading em{
+  font-style:italic;
+  color:var(--cream);
 }
 
-.way-copy p + p {
-
-    margin-top: 25px;
-
+.way-statement{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(30px,3.5vw,52px);
+  line-height:1.05;
 }
 
-.way-quote {
+.way-note{
+  font-size:13px;
+  line-height:1.9;
+  max-width:430px;
+}
 
-    padding-left: 35px;
-
-    border-left: 1px solid var(--terracotta);
-
-    margin-top: 45px;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 32px;
-
-    line-height: 1.2;
-
-    color: var(--plum);
-
+.way-signature{
+  margin-top:30px;
+  font-size:9px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--cream);
+  opacity:.7;
 }
 
 
-/* =====================================================
+/* =========================
    PORQUÊ AMORA
-===================================================== */
+========================= */
 
-.why {
-
-    background: var(--plum);
-
-    color: var(--cream);
-
+.why{
+  background:var(--plum);
+  color:var(--white);
 }
 
-.why .heading {
-
-    color: var(--cream);
-
+.why-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9vw;
+  align-items:center;
 }
 
-.why-layout {
-
-    display: grid;
-
-    grid-template-columns: .9fr 1.1fr;
-
-    gap: 110px;
-
-    align-items: center;
-
+.why-copy p,
+.why-concept-text{
+  font-size:14px;
+  line-height:1.9;
+  max-width:590px;
 }
 
-
-/* LEFT TEXT */
-
-.why-copy {
-
-    max-width: 560px;
-
+.why-highlight{
+  margin-top:35px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:34px;
+  line-height:1.05;
+  color:var(--cream);
 }
 
-.why-copy p {
-
-    font-size: 14px;
-
-    line-height: 2;
-
-    color: rgba(248,244,238,.82);
-
+.why-concept{
+  min-height:560px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  padding:70px 40px;
+  border-left:1px solid rgba(255,249,245,.2);
 }
 
-.why-copy p + p {
-
-    margin-top: 24px;
-
+.why-lamp-frame{
+  min-height:360px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  margin-bottom:18px;
 }
 
-.why-highlight {
-
-    margin-top: 45px;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 28px;
-
-    line-height: 1.25;
-
-    color: var(--cream);
-
+.why-lamp-frame:before{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border:1px solid rgba(241,224,209,.18);
+  border-radius:50%;
 }
 
-
-/* RIGHT CONCEPT */
-
-.why-concept {
-
-    min-height: 620px;
-
-    border: 1px solid rgba(248,244,238,.22);
-
-    padding: 65px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
+.why-lamp{
+  width:min(430px,90%);
+  max-height:420px;
+  object-fit:contain;
+  object-position:center;
+  position:relative;
+  z-index:2;
 }
 
-
-/* LAMP */
-
-.lamp {
-
-    width: 130px;
-
-    height: 160px;
-
-    margin-bottom: 35px;
-
-    position: relative;
-
+.why-concept-title{
+  font-family:"Cormorant Garamond",serif;
+  font-size:48px;
+  line-height:1;
 }
 
-.lamp-bulb {
-
-    width: 105px;
-
-    height: 125px;
-
-    border: 1.5px solid var(--terracotta);
-
-    border-radius: 52% 52% 45% 45%;
-
-    position: absolute;
-
-    top: 0;
-
-    left: 12px;
-
+.why-concept-subtitle{
+  margin-top:9px;
+  font-size:10px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  opacity:.65;
 }
 
-.lamp-bulb::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 48px;
-
-    height: 1px;
-
-    background: var(--terracotta);
-
-    left: 27px;
-
-    bottom: -12px;
-
-    box-shadow:
-    0 7px 0 var(--terracotta),
-    0 14px 0 var(--terracotta);
-
+.why-concept-line{
+  width:50px;
+  height:1px;
+  background:var(--terracotta);
+  margin:24px 0;
 }
 
-.lamp-filament {
-
-    position: absolute;
-
-    width: 35px;
-
-    height: 48px;
-
-    border-left: 1.5px solid var(--terracotta);
-
-    border-bottom: 1.5px solid var(--terracotta);
-
-    transform: rotate(-45deg);
-
-    left: 36px;
-
-    top: 34px;
-
+.why-concept-text{
+  margin:0;
 }
 
-.why-concept-title {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 48px;
-
-    color: var(--cream);
-
-}
-
-.why-concept-subtitle {
-
-    margin-top: 8px;
-
-    color: var(--terracotta);
-
-    text-transform: uppercase;
-
-    letter-spacing: .25em;
-
-    font-size: 9px;
-
-}
-
-.why-concept-line {
-
-    width: 55px;
-
-    height: 1px;
-
-    background: var(--terracotta);
-
-    margin: 30px auto;
-
-}
-
-.why-concept-text {
-
-    max-width: 430px;
-
-    font-size: 13px;
-
-    line-height: 2;
-
-    color: rgba(248,244,238,.75);
-
+.why-concept-text strong{
+  letter-spacing:.12em;
+  color:var(--cream);
 }
 
 
-/* =====================================================
-   WEDDINGS
-===================================================== */
+/* =========================
+   WEDDINGS / CORPORATE
+========================= */
 
-.weddings {
-
-    background: var(--cream-dark);
-
+.work{
+  background:var(--cream2);
 }
 
-.category-header {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: flex-end;
-
-    gap: 80px;
-
-    margin-bottom: 65px;
-
+.work-intro{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:8vw;
+  align-items:end;
+  margin-bottom:55px;
 }
 
-.category-description {
-
-    max-width: 440px;
-
-    font-size: 14px;
-
-    line-height: 2;
-
+.work-intro .heading{
+  margin-bottom:0;
 }
 
-.category-image {
-
-    width: 100%;
-
-    height: 72vh;
-
-    min-height: 560px;
-
-    background-size: cover;
-
-    background-position: center;
-
+.work-intro .heading em{
+  font-style:italic;
+  color:var(--plum);
 }
 
-.weddings-image {
-
-    background-image:
-    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2400&q=90");
-
+.work-intro > p{
+  max-width:390px;
+  font-size:13px;
+  line-height:1.9;
+  margin:0 0 10px;
 }
 
-
-/* =====================================================
-   CORPORATE
-===================================================== */
-
-.corporate {
-
-    background: var(--olive);
-
-    color: var(--cream);
-
+.work-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3vw;
 }
 
-.corporate .heading {
-
-    color: var(--cream);
-
+.work-card{
+  padding:55px 45px;
+  min-height:510px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
 }
 
-.corporate .category-description {
-
-    color: rgba(248,244,238,.78);
-
+.work-card.weddings{
+  background:var(--terracotta);
+  color:var(--white);
 }
 
-.corporate-image {
+.work-card.corporate{
+  background:var(--olive);
+  color:var(--white);
+}
 
-    background-image:
-    url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=2400&q=90");
+.work-card h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:60px;
+  font-weight:400;
+  margin:0 0 16px;
+  line-height:.9;
+}
 
+.work-card p{
+  font-size:13px;
+  line-height:1.8;
+  max-width:410px;
 }
 
 
-/* =====================================================
-   FIVE PILLARS
-===================================================== */
+/* =========================
+   5 PILARES
+========================= */
 
-.pillars {
-
-    background: var(--cream);
-
+.pillars{
+  background:var(--cream);
 }
 
-.pillars-header {
-
-    max-width: 750px;
-
-    margin-bottom: 80px;
-
+.pillars .heading{
+  margin-bottom:60px;
 }
 
-.pillars-intro {
-
-    max-width: 600px;
-
-    margin-top: 30px;
-
-    font-size: 14px;
-
-    line-height: 2;
-
+.pillars-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  border-top:1px solid rgba(46,45,39,.2);
 }
 
-.pillars-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(5, 1fr);
-
-    border-top: 1px solid rgba(75,80,56,.3);
-
-    border-bottom: 1px solid rgba(75,80,56,.3);
-
+.pillar{
+  padding:38px 22px 20px;
+  border-right:1px solid rgba(46,45,39,.2);
+  min-height:230px;
 }
 
-.pillar {
-
-    min-height: 340px;
-
-    padding: 40px 28px;
-
-    border-right: 1px solid rgba(75,80,56,.3);
-
+.pillar:last-child{
+  border-right:0;
 }
 
-.pillar:last-child {
-
-    border-right: none;
-
+.pillar-num{
+  font-size:10px;
+  letter-spacing:.18em;
+  color:var(--terracotta);
 }
 
-.pillar-number {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 19px;
-
-    color: var(--terracotta);
-
+.pillar h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:38px;
+  font-weight:400;
+  margin:38px 0 12px;
+  letter-spacing:-.02em;
 }
 
-.pillar-title {
-
-    margin-top: 55px;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 34px;
-
-    line-height: 1;
-
-    color: var(--olive);
-
-}
-
-.pillar-text {
-
-    margin-top: 25px;
-
-    font-size: 11px;
-
-    line-height: 1.9;
-
+.pillar p{
+  font-size:11px;
+  line-height:1.7;
+  opacity:.72;
 }
 
 
-/* =====================================================
-   STORIES
-===================================================== */
+/* =========================
+   OUR STORIES
+========================= */
 
-.stories {
-
-    background: var(--plum);
-
-    color: var(--cream);
-
+.stories{
+  background:var(--plum);
+  color:var(--white);
 }
 
-.stories .heading {
-
-    color: var(--cream);
-
+.stories .heading{
+  margin-bottom:55px;
 }
 
-.stories-header {
-
-    max-width: 700px;
-
-    margin-bottom: 75px;
-
+.story-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr 1fr;
+  gap:14px;
+  align-items:stretch;
 }
 
-.stories-intro {
-
-    margin-top: 25px;
-
-    max-width: 560px;
-
-    font-size: 14px;
-
-    line-height: 2;
-
-    color: rgba(248,244,238,.78);
-
+.story-box{
+  min-height:280px;
+  padding:30px;
+  display:flex;
+  align-items:flex-end;
 }
 
-.story-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(12, 1fr);
-
-    gap: 18px;
-
+.story-a{
+  background:var(--olive);
+  min-height:430px;
 }
 
-.story {
-
-    background-size: cover;
-
-    background-position: center;
-
+.story-b{
+  background:var(--terracotta);
+  margin-top:80px;
 }
 
-.story-one {
-
-    grid-column: span 7;
-
-    height: 720px;
-
-    background-image:
-    url("https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1800&q=90");
-
+.story-c{
+  background:var(--cream);
+  color:var(--ink);
+  min-height:350px;
+  margin-top:25px;
 }
 
-.story-two {
-
-    grid-column: span 5;
-
-    height: 520px;
-
-    background-image:
-    url("https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1400&q=90");
-
+.story-title{
+  font-family:"Cormorant Garamond",serif;
+  font-size:42px;
+  line-height:.95;
 }
 
-.story-three {
-
-    grid-column: span 5;
-
-    height: 520px;
-
-    background-image:
-    url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1400&q=90");
-
-}
-
-.story-four {
-
-    grid-column: span 7;
-
-    height: 700px;
-
-    background-image:
-    url("https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=1800&q=90");
-
+.story-small{
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+  opacity:.7;
 }
 
 
-/* =====================================================
-   CONTACT
-===================================================== */
+/* =========================
+   CONTACTOS
+========================= */
 
-.contact {
-
-    background: var(--logo-bg);
-
-    text-align: center;
-
-    padding: 160px 30px;
-
+.contact{
+  background:var(--cream2);
 }
 
-.contact .heading {
-
-    color: var(--olive);
-
+.contact-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10vw;
+  align-items:end;
 }
 
-.contact-copy {
-
-    max-width: 570px;
-
-    margin: 30px auto 45px;
-
-    font-size: 14px;
-
-    line-height: 2;
-
+.contact-title{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(65px,9vw,125px);
+  line-height:.78;
+  font-weight:400;
 }
 
-.contact-button {
-
-    display: inline-block;
-
-    border: 1px solid var(--plum);
-
-    color: var(--plum);
-
-    padding: 17px 38px;
-
-    font-size: 9px;
-
-    letter-spacing: .25em;
-
-    text-transform: uppercase;
-
-    transition: .3s;
-
+.contact-info{
+  font-size:13px;
+  line-height:2;
 }
 
-.contact-button:hover {
-
-    background: var(--plum);
-
-    color: var(--cream);
-
+.contact-info strong{
+  font-weight:500;
 }
 
 
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
-footer {
-
-    background: var(--cream);
-
-    padding: 55px 30px;
-
-    text-align: center;
-
-    color: var(--olive);
-
-}
-
-.footer-logo {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 32px;
-
-    letter-spacing: .18em;
-
-}
-
-.footer-tagline {
-
-    margin-top: 8px;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 21px;
-
-    color: var(--terracotta);
-
-}
-
-.footer-small {
-
-    margin-top: 25px;
-
-    font-size: 8px;
-
-    text-transform: uppercase;
-
-    letter-spacing: .2em;
-
-    opacity: .55;
-
+.footer{
+  padding:30px 5vw;
+  background:var(--olive);
+  color:var(--white);
+  display:flex;
+  justify-content:space-between;
+  font-size:9px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
 }
 
 
-/* =====================================================
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes floatOne{
+  from{
+    transform:translate(0,0) rotate(-1deg);
+  }
+  to{
+    transform:translate(-10px,14px) rotate(0deg);
+  }
+}
+
+@keyframes floatTwo{
+  from{
+    transform:translate(0,0);
+  }
+  to{
+    transform:translate(16px,-10px);
+  }
+}
+
+@keyframes floatThree{
+  from{
+    transform:translate(0,0);
+  }
+  to{
+    transform:translate(-12px,-8px);
+  }
+}
+
+@keyframes floatFour{
+  from{
+    transform:translate(0,0);
+  }
+  to{
+    transform:translate(8px,18px);
+  }
+}
+
+
+/* =========================
    MOBILE
-===================================================== */
-
-@media (max-width: 900px) {
-
-
-    .nav-inner {
-
-        padding: 0 22px;
-
-    }
-
-
-    .nav-links {
-
-        display: none;
-
-    }
-
-
-    .hero {
-
-        padding: 120px 20px 75px;
-
-    }
-
-
-    .hero-logo {
-
-        width: 92vw;
-
-    }
-
-
-    .hero-image {
-
-        height: 58vh;
-
-        min-height: 430px;
-
-    }
-
-
-    .section {
-
-        padding: 100px 25px;
-
-    }
-
-
-    .way-layout,
-    .why-layout {
-
-        grid-template-columns: 1fr;
-
-        gap: 65px;
-
-    }
-
-
-    .way-quote {
-
-        padding-left: 25px;
-
-    }
-
-
-    .why-concept {
-
-        min-height: 500px;
-
-        padding: 40px 25px;
-
-    }
-
-
-    .category-header {
-
-        display: block;
-
-        margin-bottom: 45px;
-
-    }
-
-
-    .category-description {
-
-        margin-top: 30px;
-
-    }
-
-
-    .category-image {
-
-        height: 58vh;
-
-        min-height: 430px;
-
-    }
-
-
-    .pillars-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .pillar {
-
-        min-height: auto;
-
-        border-right: none;
-
-        border-bottom: 1px solid rgba(75,80,56,.3);
-
-    }
-
-
-    .pillar:last-child {
-
-        border-bottom: none;
-
-    }
-
-
-    .pillar-title {
-
-        margin-top: 30px;
-
-    }
-
-
-    .story-grid {
-
-        display: grid;
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .story-one,
-    .story-two,
-    .story-three,
-    .story-four {
-
-        grid-column: span 1;
-
-        height: 520px;
-
-    }
-
+========================= */
+
+@media(max-width:800px){
+
+  .nav{
+    padding:17px 5vw;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero-editorial{
+    padding:90px 6vw 55px;
+  }
+
+  .hero-editorial-inner{
+    min-height:920px;
+  }
+
+  .hero-brand{
+    left:0;
+    top:5%;
+    width:94%;
+  }
+
+  .hero-logo{
+    width:100%;
+    max-width:590px;
+  }
+
+  .hero-title{
+    font-size:54px;
+    line-height:.92;
+    margin-top:30px;
+  }
+
+  .hero-sub{
+    max-width:330px;
+  }
+
+  .hero-block.one{
+    width:72%;
+    height:39%;
+    right:-3%;
+    top:45%;
+  }
+
+  .hero-block.two{
+    width:54%;
+    height:24%;
+    right:27%;
+    bottom:5%;
+  }
+
+  .hero-block.three{
+    width:30%;
+    height:16%;
+    right:-2%;
+    bottom:0;
+  }
+
+  .hero-block.four{
+    width:25%;
+    height:13%;
+    right:43%;
+    top:40%;
+  }
+
+  .hero-word{
+    right:3%;
+    top:49%;
+    font-size:58px;
+  }
+
+  .section{
+    padding:90px 6vw;
+  }
+
+  .way-layout,
+  .why-layout,
+  .contact-layout{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+
+  .why-concept{
+    border-left:0;
+    border-top:1px solid rgba(255,249,245,.2);
+    padding:60px 0 0;
+    min-height:auto;
+  }
+
+  .why-lamp-frame{
+    min-height:300px;
+  }
+
+  .why-lamp-frame:before{
+    width:230px;
+    height:230px;
+  }
+
+  .work-intro{
+    grid-template-columns:1fr;
+    gap:25px;
+    margin-bottom:40px;
+  }
+
+  .work-grid{
+    grid-template-columns:1fr;
+  }
+
+  .work-card{
+    min-height:420px;
+  }
+
+  .pillars-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .pillar{
+    border-bottom:1px solid rgba(46,45,39,.2);
+  }
+
+  .story-grid{
+    grid-template-columns:1fr;
+  }
+
+  .story-b,
+  .story-c{
+    margin-top:0;
+  }
+
+  .footer{
+    flex-direction:column;
+    gap:12px;
+  }
 
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-     NAV
-===================================================== -->
+<!-- =========================
+     MENU
+========================= -->
 
-<header class="nav">
+<nav class="nav">
 
-    <div class="nav-inner">
+  <a href="#top" class="nav-brand">
+    AMORA
+  </a>
 
-        <a href="#top" class="nav-brand">
-            AMORA
-        </a>
+  <div class="nav-links">
+
+    <a href="#way">
+      The Amora Way
+    </a>
+
+    <a href="#why">
+      Porquê Amora?
+    </a>
+
+    <a href="#work">
+      Weddings & Events
+    </a>
+
+    <a href="#pillars">
+      5 Pilares
+    </a>
+
+    <a href="#stories">
+      Our Stories
+    </a>
+
+    <a href="#contact">
+      Contactos
+    </a>
+
+  </div>
+
+</nav>
 
 
-        <nav class="nav-links">
 
-            <a href="#way">The Amora Way</a>
+<main>
 
-            <a href="#why">Porquê Amora</a>
 
-            <a href="#weddings">Weddings</a>
+<!-- =========================
+     CAPA
+========================= -->
 
-            <a href="#corporate">Corporate</a>
+<section class="hero-editorial" id="top">
 
-            <a href="#stories">Stories</a>
+  <div class="hero-editorial-inner">
 
-            <a href="#contact">Contactos</a>
+    <div class="hero-block one"></div>
 
-        </nav>
+    <div class="hero-block two"></div>
+
+    <div class="hero-block three"></div>
+
+    <div class="hero-block four"></div>
+
+    <div class="hero-word">
+      AMORA
+    </div>
+
+
+    <div class="hero-brand">
+
+      <div class="hero-kicker">
+        Wedding Planner & Events
+      </div>
+
+
+      <img
+        src="logo.png"
+        alt="AMORA Wedding Planner & Events"
+        class="hero-logo"
+      >
+
+
+      <h1 class="hero-title">
+
+        Pequenos detalhes.<br>
+
+        <em>
+          Grandes histórias.
+        </em>
+
+      </h1>
+
+
+      <p class="hero-sub">
+
+        Criamos celebrações e experiências com identidade,
+        intenção e atenção a cada detalhe.
+
+      </p>
 
     </div>
 
-</header>
 
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero" id="top">
-
-    <div class="hero-inner">
-
-        <div class="hero-kicker">
-            Wedding Planner & Events
-        </div>
-
-
-        <!-- LOGO ORIGINAL — NÃO ALTERAR -->
-
-        <img
-            src="logo.png"
-            alt="AMORA Wedding Planner & Events"
-            class="hero-logo"
-        >
-
-
-        <h1 class="hero-title">
-
-            Pequenos detalhes.<br>
-
-            <span>Grandes histórias.</span>
-
-        </h1>
-
-
-        <p class="hero-copy">
-
-            Criamos celebrações e experiências com
-            identidade, intenção e atenção a cada detalhe.
-
-        </p>
-
+    <div class="hero-scroll">
+      Scroll para descobrir
     </div>
+
+  </div>
 
 </section>
 
 
 
-<!-- =====================================================
-     LARGE PHOTO
-===================================================== -->
-
-<section class="hero-image"></section>
-
-
-
-<!-- =====================================================
+<!-- =========================
      THE AMORA WAY
-===================================================== -->
+========================= -->
 
 <section class="section way" id="way">
 
-    <div class="section-inner way-layout">
+  <div class="section-inner way-layout">
+
+    <div>
+
+      <div class="label">
+        01 — The Amora Way
+      </div>
 
 
-        <div>
+      <h2 class="heading">
 
-            <div class="label">
-                01 — The Amora Way
-            </div>
+        Pensamos.<br>
 
+        Criamos.<br>
 
-            <h2 class="heading">
+        <em>
+          Ligamos os detalhes.
+        </em>
 
-                Criar com<br>
-                intenção.
-
-            </h2>
-
-        </div>
-
-
-        <div class="way-copy">
-
-            <div class="line"></div>
-
-
-            <p class="body-copy">
-
-                Na <strong>AMORA</strong>, acreditamos que
-                cada celebração começa muito antes do
-                momento em que todos chegam.
-
-            </p>
-
-
-            <p class="body-copy">
-
-                Começa numa ideia, numa história,
-                numa pessoa ou num detalhe que
-                merece ganhar vida.
-
-            </p>
-
-
-            <p class="body-copy">
-
-                O nosso papel é transformar essa visão
-                numa experiência coerente, bonita e
-                pensada ao detalhe.
-
-            </p>
-
-
-            <div class="way-quote">
-
-                “Não queremos fazer igual.<br>
-                Queremos marcar a diferença.”
-
-            </div>
-
-        </div>
+      </h2>
 
     </div>
+
+
+    <div class="way-note">
+
+      <div class="way-statement">
+
+        Mais do que organizar eventos,
+        criamos experiências com intenção,
+        beleza e significado.
+
+      </div>
+
+
+      <div class="line"></div>
+
+
+      <p>
+
+        Na AMORA, tudo começa pela ideia.
+        Escutamos, interpretamos e construímos
+        uma visão com personalidade.
+
+        Depois, ligamos pessoas, escolhas e
+        detalhes para que tudo faça sentido —
+        e para que o resultado seja vivido,
+        não apenas visto.
+
+      </p>
+
+
+      <div class="way-signature">
+
+        IDEIA · INTENÇÃO · EXPERIÊNCIA
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- =========================
      PORQUÊ AMORA
-===================================================== -->
+========================= -->
 
 <section class="section why" id="why">
 
-    <div class="section-inner why-layout">
+  <div class="section-inner why-layout">
 
 
-        <div class="why-copy">
+    <div class="why-copy">
 
-            <div class="label">
-                02 — Porquê AMORA?
-            </div>
-
-
-            <h2 class="heading">
-
-                Porque uma AMORA<br>
-                nunca é apenas<br>
-                uma parte.
-
-            </h2>
+      <div class="label">
+        02 — Porquê AMORA?
+      </div>
 
 
-            <div class="line"></div>
+      <h2 class="heading">
+
+        Porque uma AMORA<br>
+        nunca é apenas<br>
+        uma parte.
+
+      </h2>
 
 
-            <p>
-
-                É feita de pequenos detalhes, unidos
-                para criar algo único.
-
-            </p>
+      <div class="line"></div>
 
 
-            <p>
-
-                E é exatamente assim que vemos cada
-                casamento e cada evento.
-
-            </p>
+      <p>
+        É feita de pequenos detalhes,
+        unidos para criar algo único.
+      </p>
 
 
-            <p>
-
-                AMORA representa aquilo em que acreditamos:
-                beleza nos detalhes, personalidade,
-                diversidade e a força que existe quando
-                pequenas coisas se unem para formar algo maior.
-
-            </p>
+      <p>
+        E é exatamente assim que vemos
+        cada casamento e cada evento.
+      </p>
 
 
-            <p>
+      <p>
 
-                Mas AMORA também nos lembra amor —
-                o ponto de partida de tantas histórias
-                que temos o privilégio de acompanhar.
+        AMORA representa aquilo em que acreditamos:
+        beleza nos detalhes, personalidade,
+        diversidade e a força que existe quando
+        pequenas coisas se unem para formar algo maior.
 
-            </p>
-
-
-            <div class="why-highlight">
-
-                Energia.<br>
-                Criatividade.<br>
-                Vontade de fazer acontecer.
-
-            </div>
-
-        </div>
+      </p>
 
 
+      <p>
 
-        <!-- CONCEITO DA LÂMPADA -->
+        Mas AMORA também nos lembra amor —
+        o ponto de partida de tantas histórias
+        que temos o privilégio de acompanhar.
 
-        <div class="why-concept">
-
-
-            <div class="lamp">
-
-                <div class="lamp-bulb"></div>
-
-                <div class="lamp-filament"></div>
-
-            </div>
+      </p>
 
 
-            <div class="why-concept-title">
-                Da ideia ao fruto.
-            </div>
+      <div class="why-highlight">
 
+        Energia.<br>
+        Criatividade.<br>
+        Vontade de fazer acontecer.
 
-            <div class="why-concept-subtitle">
-                O significado por trás da AMORA
-            </div>
-
-
-            <div class="why-concept-line"></div>
-
-
-            <p class="why-concept-text">
-
-                A lâmpada do nosso logótipo representa
-                o primeiro brilho — a ideia, o ponto de
-                partida de tudo o que criamos.
-
-                <br><br>
-
-                Os frutos representam aquilo que nasce
-                dessa ideia: algo único, criado para ser
-                vivido e lembrado.
-
-                <br><br>
-
-                <strong>IDEIA → CRIAÇÃO → CELEBRAÇÃO</strong>
-
-            </p>
-
-        </div>
-
+      </div>
 
     </div>
+
+
+
+    <div class="why-concept">
+
+
+      <div class="why-lamp-frame">
+
+        <img
+          src="lampada.png"
+          alt="Elemento original da lâmpada do logótipo AMORA"
+          class="why-lamp"
+        >
+
+      </div>
+
+
+      <div class="why-concept-title">
+
+        Da ideia ao fruto.
+
+      </div>
+
+
+      <div class="why-concept-subtitle">
+
+        O significado por trás da AMORA
+
+      </div>
+
+
+      <div class="why-concept-line"></div>
+
+
+      <p class="why-concept-text">
+
+        A lâmpada do nosso logótipo representa
+        o primeiro brilho — a ideia, o ponto de
+        partida de tudo o que criamos.
+
+        <br><br>
+
+        <strong>
+          IDEIA → CRIAÇÃO → CELEBRAÇÃO
+        </strong>
+
+      </p>
+
+    </div>
+
+  </div>
 
 </section>
 
 
 
-<!-- =====================================================
-     WEDDINGS & PRIVATE EVENTS
-===================================================== -->
+<!-- =========================
+     WEDDINGS & EVENTS
+========================= -->
 
-<section class="section weddings" id="weddings">
+<section class="section work" id="work">
 
-    <div class="section-inner">
-
-
-        <div class="category-header">
-
-
-            <div>
-
-                <div class="label">
-                    03 — Weddings
-                </div>
-
-
-                <h2 class="heading">
-
-                    Weddings &<br>
-                    Private Events
-
-                </h2>
-
-            </div>
-
-
-            <p class="category-description">
-
-                Casamentos e celebrações privadas
-                pensados à medida de cada história,
-                com personalidade, intenção e atenção
-                a cada detalhe.
-
-            </p>
-
-
-        </div>
-
-
-        <div class="category-image weddings-image"></div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CORPORATE
-===================================================== -->
-
-<section class="section corporate" id="corporate">
-
-    <div class="section-inner">
-
-
-        <div class="category-header">
-
-
-            <div>
-
-                <div class="label">
-                    04 — Corporate
-                </div>
-
-
-                <h2 class="heading">
-
-                    Corporate<br>
-                    Events
-
-                </h2>
-
-            </div>
-
-
-            <p class="category-description">
-
-                Eventos empresariais, celebrações,
-                experiências e momentos de marca
-                pensados para envolver pessoas
-                e criar impacto.
-
-            </p>
-
-
-        </div>
-
-
-        <div class="category-image corporate-image"></div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FIVE PILLARS
-===================================================== -->
-
-<section class="section pillars" id="pillars">
-
-    <div class="section-inner">
-
-
-        <div class="pillars-header">
-
-            <div class="label">
-                05 — The Amora Pillars
-            </div>
-
-
-            <h2 class="heading">
-
-                Aquilo em que<br>
-                acreditamos.
-
-            </h2>
-
-
-            <p class="pillars-intro">
-
-                Cinco ideias que estão presentes em
-                tudo o que fazemos e na forma como
-                construímos cada experiência AMORA.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="pillars-grid">
-
-
-            <div class="pillar">
-
-                <div class="pillar-number">
-                    01
-                </div>
-
-
-                <div class="pillar-title">
-                    Ideia
-                </div>
-
-
-                <p class="pillar-text">
-
-                    Tudo começa com uma ideia.
-                    O primeiro brilho que dá origem
-                    a algo único.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="pillar">
-
-                <div class="pillar-number">
-                    02
-                </div>
-
-
-                <div class="pillar-title">
-                    Paixão
-                </div>
-
-
-                <p class="pillar-text">
-
-                    O que nos move é o amor por criar
-                    momentos especiais e experiências
-                    que fazem sentido.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="pillar">
-
-                <div class="pillar-number">
-                    03
-                </div>
-
-
-                <div class="pillar-title">
-                    Pessoas
-                </div>
-
-
-                <p class="pillar-text">
-
-                    Cada pessoa certa, no lugar certo,
-                    faz toda a diferença.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="pillar">
-
-                <div class="pillar-number">
-                    04
-                </div>
-
-
-                <div class="pillar-title">
-                    Detalhes
-                </div>
-
-
-                <p class="pillar-text">
-
-                    São os pequenos detalhes que
-                    transformam uma experiência
-                    em algo inesquecível.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="pillar">
-
-                <div class="pillar-number">
-                    05
-                </div>
-
-
-                <div class="pillar-title">
-                    Memórias
-                </div>
-
-
-                <p class="pillar-text">
-
-                    Momentos que ficam.
-                    Histórias que continuam muito
-                    depois de o evento terminar.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     OUR STORIES
-===================================================== -->
-
-<section class="section stories" id="stories">
-
-    <div class="section-inner">
-
-
-        <div class="stories-header">
-
-            <div class="label">
-                06 — Our Stories
-            </div>
-
-
-            <h2 class="heading">
-
-                Histórias que<br>
-                merecem ser vividas.
-
-            </h2>
-
-
-            <p class="stories-intro">
-
-                Um espaço para mostrar pessoas,
-                celebrações, ambientes e aqueles
-                pequenos detalhes que dão vida
-                ao universo AMORA.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="story-grid">
-
-
-            <div class="story story-one"></div>
-
-            <div class="story story-two"></div>
-
-            <div class="story story-three"></div>
-
-            <div class="story story-four"></div>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CONTACTOS
-===================================================== -->
-
-<section class="contact" id="contact">
+  <div class="section-inner">
 
 
     <div class="label">
-        07 — Contactos
+      03 — Weddings & Events
+    </div>
+
+
+    <div class="work-intro">
+
+      <h2 class="heading">
+
+        Celebrações<br>
+
+        <em>
+          com identidade.
+        </em>
+
+      </h2>
+
+
+      <p>
+
+        Do privado ao corporativo,
+        criamos momentos pensados para
+        as pessoas, para a ocasião e para
+        a história que queremos contar.
+
+      </p>
+
+    </div>
+
+
+    <div class="work-grid">
+
+
+      <article class="work-card weddings">
+
+        <h3>
+
+          Weddings<br>
+          & Private Events
+
+        </h3>
+
+
+        <p>
+
+          Casamentos e celebrações privadas
+          pensados ao detalhe, com uma visão
+          coerente do início ao fim —
+          da ideia à experiência.
+
+        </p>
+
+      </article>
+
+
+
+      <article class="work-card corporate">
+
+        <h3>
+          Corporate
+        </h3>
+
+
+        <p>
+
+          Eventos corporativos com conceito,
+          intenção e personalidade, pensados
+          para representar marcas e criar
+          experiências que ficam na memória.
+
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     5 PILARES
+========================= -->
+
+<section class="section pillars" id="pillars">
+
+  <div class="section-inner">
+
+
+    <div class="label">
+      04 — 5 Pilares da AMORA
     </div>
 
 
     <h2 class="heading">
 
-        Vamos criar<br>
-        algo único?
+      Aquilo que nos<br>
+      move.
 
     </h2>
 
 
-    <p class="contact-copy">
-
-        Conte-nos a história, a ideia ou simplesmente
-        aquilo que está a imaginar.
-
-        <br>
-
-        A partir daí, começamos a criar.
-
-    </p>
+    <div class="pillars-grid">
 
 
-    <!--
-        ALTERAR PELO EMAIL REAL DA AMORA
-    -->
+      <article class="pillar">
 
-    <a
-        href="mailto:SEUEMAIL@EXEMPLO.PT"
-        class="contact-button"
-    >
+        <div class="pillar-num">
+          01
+        </div>
 
-        Vamos conversar
+        <h3>
+          Ideia
+        </h3>
 
-    </a>
+        <p>
+          O primeiro brilho.
+          O ponto de partida de tudo
+          o que criamos.
+        </p>
 
+      </article>
+
+
+
+      <article class="pillar">
+
+        <div class="pillar-num">
+          02
+        </div>
+
+        <h3>
+          Paixão
+        </h3>
+
+        <p>
+          A energia que transforma
+          uma ideia em vontade
+          de fazer acontecer.
+        </p>
+
+      </article>
+
+
+
+      <article class="pillar">
+
+        <div class="pillar-num">
+          03
+        </div>
+
+        <h3>
+          Pessoas
+        </h3>
+
+        <p>
+          Porque são as pessoas
+          que dão sentido a cada
+          celebração.
+        </p>
+
+      </article>
+
+
+
+      <article class="pillar">
+
+        <div class="pillar-num">
+          04
+        </div>
+
+        <h3>
+          Detalhes
+        </h3>
+
+        <p>
+          A beleza está naquilo
+          que se escolhe, se sente
+          e se repara.
+        </p>
+
+      </article>
+
+
+
+      <article class="pillar">
+
+        <div class="pillar-num">
+          05
+        </div>
+
+        <h3>
+          Memórias
+        </h3>
+
+        <p>
+          O que fica depois de
+          o evento terminar.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- =========================
+     OUR STORIES
+========================= -->
+
+<section class="section stories" id="stories">
+
+  <div class="section-inner">
+
+
+    <div class="label">
+      05 — Our Stories
+    </div>
+
+
+    <h2 class="heading">
+
+      Histórias que<br>
+      ainda vão acontecer.
+
+    </h2>
+
+
+    <div class="story-grid">
+
+
+      <div class="story-box story-a">
+
+        <div>
+
+          <div class="story-small">
+            Weddings
+          </div>
+
+          <div class="story-title">
+
+            Momentos<br>
+            com intenção.
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="story-box story-b">
+
+        <div>
+
+          <div class="story-small">
+            Events
+          </div>
+
+          <div class="story-title">
+
+            Detalhes<br>
+            que ficam.
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="story-box story-c">
+
+        <div>
+
+          <div class="story-small">
+            AMORA
+          </div>
+
+          <div class="story-title">
+
+            Pequenos detalhes.<br>
+            Grandes histórias.
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACTOS
+========================= -->
+
+<section class="section contact" id="contact">
+
+  <div class="section-inner contact-layout">
+
+
+    <div class="contact-title">
+
+      Vamos<br>
+      criar?
+
+    </div>
+
+
+    <div class="contact-info">
+
+      <p>
+
+        Tem uma ideia, uma data ou
+        simplesmente vontade de conversar?
+
+      </p>
+
+
+      <p>
+
+        <strong>
+          AMORA Wedding Planner & Events
+        </strong>
+
+      </p>
+
+
+      <p>
+
+        Email · geral@amoraevents.pt<br>
+
+        Instagram · @amoraevents
+
+      </p>
+
+
+      <p>
+
+        Pequenos detalhes.
+        Grandes histórias.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
-<footer>
+<footer class="footer">
 
+  <span>
+    AMORA Wedding Planner & Events
+  </span>
 
-    <div class="footer-logo">
-        AMORA
-    </div>
-
-
-    <div class="footer-tagline">
-
-        Pequenos detalhes. Grandes histórias.
-
-    </div>
-
-
-    <div class="footer-small">
-
-        Wedding Planner & Events · Portugal
-
-    </div>
-
+  <span>
+    © 2026 AMORA
+  </span>
 
 </footer>
 
+
+</main>
 
 </body>
 </html>
