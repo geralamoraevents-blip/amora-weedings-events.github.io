@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Amora Wedding Planner & Events</title>
 
-  <meta name="description" content="Amora Wedding Planner & Events — pequenos detalhes, grandes histórias. Criamos e coordenamos casamentos e eventos pensados para marcar a diferença.">
+  <meta
+    name="description"
+    content="Amora Wedding Planner & Events — pequenos detalhes, grandes histórias."
+  >
 
   <style>
+
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
 
+
+    /* =========================
+       CORES AMORA
+    ========================= */
+
     :root {
-      --creme: #f5eee6;
-      --creme-claro: #fbf7f2;
-      --verde: #3f4125;
+
+      --creme: #f7efe5;
+      --creme-claro: #fcf8f3;
+
+      --verde: #45482c;
+      --verde-claro: #697052;
+
       --terracota: #b86643;
-      --ameixa: #35233a;
-      --texto: #38372f;
+      --terracota-claro: #d39a7e;
+
+      --ameixa: #3b2940;
+      --ameixa-claro: #5a405e;
+
+      --texto: #34342d;
+
+      --linha: rgba(69,72,44,0.18);
     }
+
+
+    /* =========================
+       BASE
+    ========================= */
 
     * {
       margin: 0;
@@ -31,733 +56,2020 @@
     }
 
     body {
+
       background: var(--creme-claro);
+
       color: var(--texto);
+
       font-family: 'Montserrat', sans-serif;
+
       font-weight: 300;
+
       line-height: 1.7;
     }
 
-    /* MENU */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 20px 6%;
-      background: rgba(251, 247, 242, 0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(63, 65, 37, 0.08);
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 30px;
-      letter-spacing: 5px;
-      color: var(--verde);
+    a {
+      color: inherit;
       text-decoration: none;
     }
 
-    .nav-links {
+
+    /* =========================
+       MENU
+    ========================= */
+
+    header {
+
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 100;
+
+      background: rgba(252,248,243,0.94);
+
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid var(--linha);
+    }
+
+    nav {
+
+      max-width: 1250px;
+
+      margin: auto;
+
+      padding: 18px 5%;
+
       display: flex;
-      gap: 30px;
+
+      align-items: center;
+
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 29px;
+
+      letter-spacing: 6px;
+
+      color: var(--verde);
+    }
+
+    .nav-links {
+
+      display: flex;
+
+      gap: 34px;
+
       list-style: none;
     }
 
     .nav-links a {
-      text-decoration: none;
-      color: var(--verde);
-      font-size: 12px;
-      letter-spacing: 2px;
+
+      font-size: 10px;
+
+      letter-spacing: 2.5px;
+
       text-transform: uppercase;
+
+      color: var(--verde);
     }
 
     .nav-links a:hover {
+
       color: var(--terracota);
     }
 
-    /* HERO */
+
+    /* =========================
+       ELEMENTOS DECORATIVOS
+    ========================= */
+
+    .berry-decoration {
+
+      position: absolute;
+
+      width: 170px;
+
+      opacity: 0.72;
+
+      pointer-events: none;
+    }
+
+    .berry-left {
+
+      left: 3%;
+
+      bottom: 12%;
+    }
+
+    .berry-right {
+
+      right: 3%;
+
+      top: 15%;
+      transform: rotate(12deg);
+    }
+
+    .berry-small {
+
+      width: 115px;
+
+      opacity: 0.45;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
+
       min-height: 100vh;
-      padding: 150px 6% 80px;
+
+      position: relative;
+
+      overflow: hidden;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       text-align: center;
+
+      padding: 150px 7% 100px;
+
       background:
-        radial-gradient(circle at center, rgba(184,102,67,0.06), transparent 45%),
+
+        radial-gradient(
+          circle at 50% 35%,
+          rgba(184,102,67,0.08),
+          transparent 38%
+        ),
+
         var(--creme);
     }
 
     .hero-content {
+
       max-width: 900px;
+
+      position: relative;
+
+      z-index: 2;
     }
 
     .hero-logo {
-      width: min(420px, 75vw);
-      margin-bottom: 35px;
+
+      display: block;
+
+      width: min(700px, 88vw);
+
+      max-height: 510px;
+
+      object-fit: contain;
+
+      margin: 0 auto 35px;
     }
 
-    .eyebrow {
-      color: var(--terracota);
-      font-size: 12px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
+    .hero-line {
+
+      width: 70px;
+
+      height: 1px;
+
+      background: var(--terracota);
+
+      margin: 25px auto;
     }
 
-    h1 {
+    .hero-tagline {
+
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(48px, 7vw, 88px);
-      font-weight: 400;
-      line-height: 0.95;
+
+      font-size: clamp(35px, 5vw, 60px);
+
+      line-height: 1.05;
+
       color: var(--verde);
-      margin-bottom: 30px;
+
+      font-style: italic;
+
+      margin-bottom: 25px;
+    }
+
+    .hero-tagline span {
+
+      color: var(--terracota);
     }
 
     .hero-text {
+
       max-width: 650px;
+
       margin: auto;
-      font-size: 16px;
+
+      font-size: 14px;
     }
 
     .button {
+
       display: inline-block;
-      margin-top: 35px;
-      padding: 14px 30px;
+
+      margin-top: 32px;
+
+      padding: 13px 30px;
+
       border: 1px solid var(--terracota);
+
       color: var(--terracota);
-      text-decoration: none;
-      font-size: 11px;
-      letter-spacing: 2px;
+
+      font-size: 10px;
+
+      letter-spacing: 2.5px;
+
       text-transform: uppercase;
+
       transition: 0.3s;
     }
 
     .button:hover {
+
       background: var(--terracota);
+
       color: white;
     }
 
-    /* SECÇÕES */
+
+    /* =========================
+       TITULOS
+    ========================= */
 
     section {
+
       padding: 110px 7%;
+
+      position: relative;
+
+      overflow: hidden;
     }
 
     .section-title {
+
       text-align: center;
-      margin-bottom: 55px;
+
+      margin-bottom: 65px;
     }
 
-    .section-title span {
+    .section-title .small {
+
       display: block;
+
       color: var(--terracota);
-      font-size: 11px;
+
+      font-size: 10px;
+
       letter-spacing: 4px;
+
       text-transform: uppercase;
-      margin-bottom: 12px;
+
+      margin-bottom: 13px;
     }
 
     .section-title h2 {
+
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(42px, 6vw, 70px);
-      font-weight: 400;
-      color: var(--verde);
+
+      font-size: clamp(43px, 6vw, 68px);
+
       line-height: 1;
+
+      font-weight: 400;
+
+      color: var(--verde);
     }
 
     .section-title p {
+
       max-width: 650px;
+
       margin: 25px auto 0;
+
+      font-size: 14px;
     }
 
-    /* PORQUÊ AMORA */
+    .title-line {
 
-    .about-amora {
+      width: 45px;
+
+      height: 1px;
+
+      background: var(--terracota);
+
+      margin: 22px auto;
+    }
+
+
+    /* =========================
+       PORQUÊ AMORA
+    ========================= */
+
+    .about {
+
       background: var(--creme-claro);
     }
 
-    .amora-intro {
-      max-width: 750px;
+    .about-intro {
+
+      max-width: 760px;
+
       margin: auto;
+
       text-align: center;
+
       font-size: 17px;
     }
 
-    .amora-intro strong {
+    .about-intro strong {
+
       color: var(--terracota);
+
       font-weight: 500;
     }
 
     .values {
-      max-width: 1000px;
+
+      max-width: 1100px;
+
       margin: 70px auto 0;
+
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 45px;
+
+      grid-template-columns: repeat(6,1fr);
+
+      border-top: 1px solid var(--linha);
+
+      border-bottom: 1px solid var(--linha);
     }
 
     .value {
+
+      padding: 35px 15px;
+
       text-align: center;
+
+      border-right: 1px solid var(--linha);
+    }
+
+    .value:last-child {
+
+      border-right: none;
     }
 
     .value-number {
+
       font-family: 'Cormorant Garamond', serif;
+
+      font-size: 28px;
+
       color: var(--terracota);
-      font-size: 36px;
     }
 
     .value h3 {
-      color: var(--verde);
-      letter-spacing: 2px;
-      font-size: 13px;
+
+      font-size: 10px;
+
+      letter-spacing: 1.5px;
+
       text-transform: uppercase;
-      margin: 8px 0;
+
+      color: var(--verde);
+
+      margin: 8px 0 10px;
     }
 
     .value p {
-      font-size: 13px;
+
+      font-size: 11px;
+
+      line-height: 1.6;
     }
 
-    /* SERVIÇOS */
 
-    .services {
-      background: var(--creme);
+    /* =========================
+       WEDDINGS
+    ========================= */
+
+    .weddings {
+
+      background: var(--verde);
+
+      color: var(--creme);
     }
 
-    .service-grid {
+    .weddings .section-title h2 {
+
+      color: var(--creme);
+    }
+
+    .weddings .section-title .small {
+
+      color: var(--terracota-claro);
+    }
+
+    .wedding-layout {
+
       max-width: 1100px;
+
       margin: auto;
+
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 70px;
+
+      align-items: center;
     }
 
-    .service-card {
-      padding: 55px 45px;
-      border: 1px solid rgba(63, 65, 37, 0.15);
-      background: rgba(255,255,255,0.22);
+    .image-placeholder {
+
+      min-height: 500px;
+
+      background:
+
+        linear-gradient(
+          rgba(0,0,0,0.08),
+          rgba(0,0,0,0.08)
+        ),
+
+        #858875;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: var(--creme);
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 28px;
+
       text-align: center;
     }
 
-    .service-card h3 {
+    .wedding-content h3 {
+
       font-family: 'Cormorant Garamond', serif;
-      font-size: 43px;
-      color: var(--verde);
+
+      font-size: 46px;
+
       font-weight: 400;
+
+      color: var(--creme);
+
+      line-height: 1.1;
+
       margin-bottom: 20px;
     }
 
-    .service-card ul {
+    .wedding-content p {
+
+      font-size: 14px;
+
+      margin-bottom: 25px;
+    }
+
+    .service-list {
+
       list-style: none;
-      margin-top: 25px;
     }
 
-    .service-card li {
-      margin: 8px 0;
-      font-size: 13px;
+    .service-list li {
+
+      padding: 7px 0;
+
+      border-bottom: 1px solid rgba(247,239,229,0.16);
+
+      font-size: 12px;
     }
 
-    .service-card li::before {
-      content: "•";
-      color: var(--terracota);
-      margin-right: 8px;
+    .service-list li::before {
+
+      content: "✦";
+
+      color: var(--terracota-claro);
+
+      margin-right: 10px;
     }
 
-    /* PROCESSO */
 
-    .process {
-      background: var(--verde);
-      color: var(--creme);
+    /* =========================
+       EVENTS
+    ========================= */
+
+    .events {
+
+      background: var(--creme);
     }
 
-    .process .section-title h2,
-    .process .section-title span {
-      color: var(--creme);
-    }
+    .events-layout {
 
-    .process-grid {
       max-width: 1100px;
+
       margin: auto;
+
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 15px;
-    }
 
-    .process-step {
-      text-align: center;
-      padding: 20px 5px;
-    }
+      grid-template-columns: 1fr 1fr;
 
-    .process-step .number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 34px;
-      color: #d49a7e;
-    }
+      gap: 70px;
 
-    .process-step h3 {
-      font-size: 11px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-top: 10px;
-    }
-
-    /* PORTFOLIO */
-
-    .portfolio-grid {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .portfolio-placeholder {
-      aspect-ratio: 4 / 5;
-      background: #e8ddd2;
-      display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--verde);
+    }
+
+    .events-content h3 {
+
       font-family: 'Cormorant Garamond', serif;
+
+      font-size: 48px;
+
+      color: var(--verde);
+
+      font-weight: 400;
+
+      margin-bottom: 20px;
+    }
+
+    .events-content p {
+
+      font-size: 14px;
+
+      margin-bottom: 30px;
+    }
+
+    .event-types {
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10px 25px;
+
+      list-style: none;
+    }
+
+    .event-types li {
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 22px;
+
+      color: var(--ameixa);
+    }
+
+    .event-image {
+
+      min-height: 430px;
+
+      background: #d5c7ba;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: var(--verde);
+
+      font-family: 'Cormorant Garamond', serif;
+
       font-size: 28px;
     }
 
-    /* SOBRE */
 
-    .team {
-      background: var(--creme);
-      text-align: center;
+    /* =========================
+       SERVIÇOS COMPLEMENTARES
+    ========================= */
+
+    .extras {
+
+      background: var(--ameixa);
+
+      color: var(--creme);
     }
 
-    .team-text {
-      max-width: 750px;
+    .extras .section-title h2 {
+
+      color: var(--creme);
+    }
+
+    .extras .section-title .small {
+
+      color: var(--terracota-claro);
+    }
+
+    .extras-intro {
+
+      max-width: 650px;
+
+      margin: -25px auto 55px;
+
+      text-align: center;
+
+      font-size: 14px;
+    }
+
+    .extras-grid {
+
+      max-width: 1100px;
+
       margin: auto;
-      font-size: 16px;
+
+      display: grid;
+
+      grid-template-columns: repeat(5,1fr);
+
+      gap: 15px;
     }
 
-    .signature {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 34px;
-      color: var(--terracota);
-      margin-top: 35px;
-    }
+    .extra {
 
-    /* CONTACTO */
+      padding: 35px 18px;
 
-    .contact {
+      border: 1px solid rgba(247,239,229,0.18);
+
       text-align: center;
+
+      transition: 0.3s;
+    }
+
+    .extra:hover {
+
+      border-color: var(--terracota-claro);
+
+      transform: translateY(-5px);
+    }
+
+    .extra-icon {
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 30px;
+
+      color: var(--terracota-claro);
+
+      margin-bottom: 15px;
+    }
+
+    .extra h3 {
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 25px;
+
+      font-weight: 400;
+
+      margin-bottom: 12px;
+    }
+
+    .extra p {
+
+      font-size: 10px;
+
+      line-height: 1.6;
+
+      opacity: 0.85;
+    }
+
+
+    /* =========================
+       PROCESSO
+    ========================= */
+
+    .process {
+
       background: var(--creme-claro);
     }
 
-    .contact-text {
-      max-width: 650px;
+    .process-grid {
+
+      max-width: 1100px;
+
       margin: auto;
+
+      display: grid;
+
+      grid-template-columns: repeat(6,1fr);
     }
 
-    /* FOOTER */
+    .process-step {
 
-    footer {
-      padding: 55px 7%;
-      background: var(--verde);
-      color: var(--creme);
+      text-align: center;
+
+      padding: 15px;
+
+      border-right: 1px solid var(--linha);
+    }
+
+    .process-step:last-child {
+
+      border-right: none;
+    }
+
+    .process-number {
+
+      width: 55px;
+
+      height: 55px;
+
+      border: 1px solid var(--terracota);
+
+      border-radius: 50%;
+
+      margin: 0 auto 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 22px;
+
+      color: var(--terracota);
+    }
+
+    .process-step h3 {
+
+      font-size: 10px;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      color: var(--verde);
+
+      margin-bottom: 8px;
+    }
+
+    .process-step p {
+
+      font-size: 10px;
+    }
+
+
+    /* =========================
+       PORTFOLIO
+    ========================= */
+
+    .portfolio {
+
+      background: var(--creme);
+    }
+
+    .portfolio-grid {
+
+      max-width: 1150px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: 1.3fr 0.8fr 0.8fr;
+
+      gap: 15px;
+    }
+
+    .portfolio-box {
+
+      min-height: 430px;
+
+      background: #d9c9ba;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: var(--verde);
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 25px;
+
       text-align: center;
     }
 
-    footer .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 40px;
-      letter-spacing: 7px;
+    .portfolio-box:nth-child(2) {
+
+      min-height: 300px;
     }
 
-    footer p {
-      margin-top: 10px;
+    .portfolio-box:nth-child(3) {
+
+      min-height: 300px;
+    }
+
+    .portfolio-note {
+
+      text-align: center;
+
+      margin-top: 30px;
+
       font-size: 11px;
-      letter-spacing: 2px;
+
+      letter-spacing: 1px;
+
+      color: var(--terracota);
     }
 
-    /* MOBILE */
 
-    @media (max-width: 800px) {
+    /* =========================
+       SOBRE
+    ========================= */
 
-      header {
-        padding: 15px 5%;
-      }
+    .about-us {
+
+      background: var(--verde);
+
+      color: var(--creme);
+    }
+
+    .about-us .section-title h2 {
+
+      color: var(--creme);
+    }
+
+    .about-us .section-title .small {
+
+      color: var(--terracota-claro);
+    }
+
+    .about-us-content {
+
+      max-width: 800px;
+
+      margin: auto;
+
+      text-align: center;
+
+      font-size: 16px;
+    }
+
+    .about-us-content strong {
+
+      color: var(--terracota-claro);
+
+      font-weight: 400;
+    }
+
+    .quote {
+
+      margin-top: 45px;
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 34px;
+
+      line-height: 1.15;
+
+      color: var(--creme);
+    }
+
+
+    /* =========================
+       CONTACTO
+    ========================= */
+
+    .contact {
+
+      background: var(--creme-claro);
+
+      text-align: center;
+    }
+
+    .contact h2 {
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: clamp(48px, 7vw, 78px);
+
+      font-weight: 400;
+
+      color: var(--verde);
+    }
+
+    .contact h2 span {
+
+      color: var(--terracota);
+    }
+
+    .contact p {
+
+      max-width: 600px;
+
+      margin: 25px auto;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+      background: var(--ameixa);
+
+      color: var(--creme);
+
+      text-align: center;
+
+      padding: 55px 7%;
+    }
+
+    .footer-logo {
+
+      font-family: 'Cormorant Garamond', serif;
+
+      font-size: 45px;
+
+      letter-spacing: 8px;
+
+      margin-bottom: 8px;
+    }
+
+    .footer-subtitle {
+
+      color: var(--terracota-claro);
+
+      font-size: 10px;
+
+      letter-spacing: 3px;
+    }
+
+    .footer-copy {
+
+      margin-top: 25px;
+
+      font-size: 10px;
+
+      opacity: 0.65;
+    }
+
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+
+    @media (max-width: 900px) {
 
       .nav-links {
         display: none;
       }
 
-      .hero {
-        padding-top: 130px;
-      }
-
-      section {
-        padding: 80px 6%;
+      .hero-logo {
+        width: 90vw;
       }
 
       .values {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        grid-template-columns: repeat(3,1fr);
       }
 
-      .service-grid {
+      .value:nth-child(3) {
+        border-right: none;
+      }
+
+      .wedding-layout,
+      .events-layout {
         grid-template-columns: 1fr;
+      }
+
+      .extras-grid {
+        grid-template-columns: repeat(2,1fr);
       }
 
       .process-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+      }
+
+      .process-step {
+        border-right: none;
       }
 
       .portfolio-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-logo {
-        width: min(350px, 85vw);
+      .portfolio-box,
+      .portfolio-box:nth-child(2),
+      .portfolio-box:nth-child(3) {
+        min-height: 350px;
       }
     }
+
+
+    @media (max-width: 600px) {
+
+      section {
+        padding: 80px 6%;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero-logo {
+        width: 92vw;
+      }
+
+      .values {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .value {
+        border-right: none;
+        border-bottom: 1px solid var(--linha);
+      }
+
+      .extras-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .event-types {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .berry-decoration {
+        opacity: 0.25;
+      }
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================
+     MENU
+========================= -->
+
 <header>
+
   <nav>
-    <a href="#" class="nav-logo">AMORA</a>
+
+    <a href="#" class="nav-logo">
+      AMORA
+    </a>
 
     <ul class="nav-links">
-      <li><a href="#amora">Sobre</a></li>
-      <li><a href="#servicos">Weddings</a></li>
-      <li><a href="#servicos">Events</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contacto">Contactos</a></li>
+
+      <li>
+        <a href="#amora">Sobre</a>
+      </li>
+
+      <li>
+        <a href="#weddings">Weddings</a>
+      </li>
+
+      <li>
+        <a href="#events">Events</a>
+      </li>
+
+      <li>
+        <a href="#extras">Complementares</a>
+      </li>
+
+      <li>
+        <a href="#portfolio">Portfolio</a>
+      </li>
+
+      <li>
+        <a href="#contacto">Contactos</a>
+      </li>
+
     </ul>
+
   </nav>
+
 </header>
+
 
 <main>
 
-  <section class="hero">
 
-    <div class="hero-content">
+<!-- =========================
+     HERO
+========================= -->
 
-      <img
-        src="Logotipo%201.png"
-        alt="Amora Wedding Planner & Events"
-        class="hero-logo"
-      >
+<section class="hero">
 
-      <div class="eyebrow">Wedding Planner & Events</div>
 
-      <h1>
-        Pequenos detalhes.<br>
-        Grandes histórias.
-      </h1>
+  <!-- AMORA DESENHADA -->
+  <svg
+    class="berry-decoration berry-left"
+    viewBox="0 0 200 260"
+    aria-hidden="true"
+  >
 
-      <p class="hero-text">
-        Planeamos, criamos e coordenamos casamentos e eventos
-        pensados ao detalhe — com identidade, intenção e significado.
-      </p>
+    <path
+      d="M110 210 C90 170 70 125 85 70"
+      fill="none"
+      stroke="#697052"
+      stroke-width="2"
+    />
 
-      <a href="#contacto" class="button">
-        Conhecer a Amora
-      </a>
+    <path
+      d="M83 105 C45 80 30 48 35 25"
+      fill="none"
+      stroke="#697052"
+      stroke-width="2"
+    />
+
+    <ellipse
+      cx="47"
+      cy="58"
+      rx="35"
+      ry="13"
+      transform="rotate(35 47 58)"
+      fill="none"
+      stroke="#697052"
+      stroke-width="2"
+    />
+
+    <g fill="#3b2940">
+
+      <circle cx="105" cy="170" r="14"/>
+      <circle cx="125" cy="170" r="14"/>
+      <circle cx="145" cy="170" r="14"/>
+
+      <circle cx="95" cy="188" r="14"/>
+      <circle cx="115" cy="190" r="14"/>
+      <circle cx="135" cy="190" r="14"/>
+
+      <circle cx="105" cy="210" r="14"/>
+      <circle cx="125" cy="210" r="14"/>
+
+    </g>
+
+  </svg>
+
+
+  <div class="hero-content">
+
+    <!-- LOGO ORIGINAL -->
+    <img
+      src="Logotipo1.png"
+      alt="Amora Wedding Planner & Events"
+      class="hero-logo"
+    >
+
+    <div class="hero-line"></div>
+
+    <div class="hero-tagline">
+
+      Pequenos detalhes.<br>
+
+      <span>Grandes histórias.</span>
 
     </div>
 
-  </section>
+    <p class="hero-text">
+
+      Criamos e coordenamos casamentos e celebrações
+      pensados ao detalhe, com identidade, intenção e significado.
+
+    </p>
+
+    <a href="#contacto" class="button">
+      Vamos criar?
+    </a>
+
+  </div>
 
 
-  <section id="amora" class="about-amora">
+  <!-- PEQUENA AMORA DESENHADA -->
 
-    <div class="section-title">
-      <span>Porquê</span>
-      <h2>AMORA?</h2>
-    </div>
+  <svg
+    class="berry-decoration berry-right"
+    viewBox="0 0 200 260"
+    aria-hidden="true"
+  >
 
-    <div class="amora-intro">
+    <path
+      d="M85 35 C100 75 110 120 95 160"
+      fill="none"
+      stroke="#697052"
+      stroke-width="2"
+    />
+
+    <path
+      d="M98 80 C135 65 155 40 158 20"
+      fill="none"
+      stroke="#697052"
+      stroke-width="2"
+    />
+
+    <g fill="#3b2940">
+
+      <circle cx="85" cy="170" r="13"/>
+      <circle cx="105" cy="170" r="13"/>
+      <circle cx="125" cy="170" r="13"/>
+
+      <circle cx="75" cy="188" r="13"/>
+      <circle cx="95" cy="190" r="13"/>
+      <circle cx="115" cy="188" r="13"/>
+
+      <circle cx="85" cy="208" r="13"/>
+      <circle cx="105" cy="208" r="13"/>
+
+    </g>
+
+  </svg>
+
+</section>
+
+
+<!-- =========================
+     PORQUÊ AMORA
+========================= -->
+
+<section class="about" id="amora">
+
+  <div class="section-title">
+
+    <span class="small">
+      A nossa essência
+    </span>
+
+    <h2>
+      Porquê Amora?
+    </h2>
+
+    <div class="title-line"></div>
+
+  </div>
+
+
+  <div class="about-intro">
+
+    <p>
+
+      <strong>
+        Porque uma Amora nunca é apenas uma parte.
+      </strong>
+
+    </p>
+
+    <br>
+
+    <p>
+
+      É feita de pequenos detalhes, unidos para criar algo único.
+
+      É exatamente assim que vemos cada casamento e cada evento:
+      uma combinação de pessoas, histórias, ideias, escolhas e
+      emoções que, juntas, formam algo maior.
+
+    </p>
+
+  </div>
+
+
+  <div class="values">
+
+
+    <div class="value">
+
+      <div class="value-number">01</div>
+
+      <h3>
+        Uma ideia
+      </h3>
 
       <p>
-        <strong>Porque uma Amora nunca é apenas uma parte.</strong>
+        Tudo começa com uma ideia.
       </p>
 
-      <br>
+    </div>
+
+
+    <div class="value">
+
+      <div class="value-number">02</div>
+
+      <h3>
+        Paixão
+      </h3>
 
       <p>
-        É feita de pequenos detalhes, unidos para criar algo único.
-        É exatamente assim que vemos cada casamento e cada evento:
-        uma combinação de pessoas, histórias, ideias, escolhas e
-        emoções que, juntas, formam algo maior.
+        O que nos move é criar momentos especiais.
       </p>
 
     </div>
 
-    <div class="values">
 
-      <div class="value">
-        <div class="value-number">01</div>
-        <h3>Uma ideia</h3>
-        <p>Tudo começa com uma ideia.</p>
-      </div>
+    <div class="value">
 
-      <div class="value">
-        <div class="value-number">02</div>
-        <h3>Paixão</h3>
-        <p>O que nos move é criar momentos especiais.</p>
-      </div>
+      <div class="value-number">03</div>
 
-      <div class="value">
-        <div class="value-number">03</div>
-        <h3>Pessoas</h3>
-        <p>Cada pessoa certa faz toda a diferença.</p>
-      </div>
-
-      <div class="value">
-        <div class="value-number">04</div>
-        <h3>Detalhes</h3>
-        <p>São os pequenos detalhes que tornam tudo inesquecível.</p>
-      </div>
-
-      <div class="value">
-        <div class="value-number">05</div>
-        <h3>União</h3>
-        <p>Pequenas partes que, juntas, formam algo único.</p>
-      </div>
-
-      <div class="value">
-        <div class="value-number">06</div>
-        <h3>Memórias</h3>
-        <p>Momentos que ficam e histórias que duram.</p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section id="servicos" class="services">
-
-    <div class="section-title">
-      <span>O que fazemos</span>
-      <h2>Experiências únicas</h2>
+      <h3>
+        Pessoas
+      </h3>
 
       <p>
-        Transformamos ideias em celebrações com personalidade,
-        planeadas e coordenadas ao detalhe.
+        Cada pessoa certa faz toda a diferença.
       </p>
-    </div>
-
-    <div class="service-grid">
-
-      <div class="service-card">
-
-        <h3>Weddings</h3>
-
-        <p>
-          Do primeiro sonho ao último detalhe,
-          acompanhamos os noivos ao longo de todo o processo.
-        </p>
-
-        <ul>
-          <li>Wedding Planning</li>
-          <li>Planeamento integral</li>
-          <li>Planeamento parcial</li>
-          <li>Coordenação do dia</li>
-          <li>Design & Concept</li>
-          <li>Gestão de fornecedores</li>
-          <li>Styling & decoração</li>
-        </ul>
-
-      </div>
-
-
-      <div class="service-card">
-
-        <h3>Events</h3>
-
-        <p>
-          Criamos celebrações pensadas para serem vividas
-          e recordadas.
-        </p>
-
-        <ul>
-          <li>Aniversários</li>
-          <li>Batizados</li>
-          <li>Jantares especiais</li>
-          <li>Baby showers</li>
-          <li>Festas privadas</li>
-          <li>Celebrações familiares</li>
-          <li>Eventos personalizados</li>
-        </ul>
-
-      </div>
 
     </div>
 
-  </section>
 
+    <div class="value">
 
-  <section class="process">
+      <div class="value-number">04</div>
 
-    <div class="section-title">
-      <span>O nosso processo</span>
-      <h2>Do sonho à memória</h2>
-    </div>
-
-    <div class="process-grid">
-
-      <div class="process-step">
-        <div class="number">01</div>
-        <h3>Ideia</h3>
-      </div>
-
-      <div class="process-step">
-        <div class="number">02</div>
-        <h3>Conceito</h3>
-      </div>
-
-      <div class="process-step">
-        <div class="number">03</div>
-        <h3>Planeamento</h3>
-      </div>
-
-      <div class="process-step">
-        <div class="number">04</div>
-        <h3>Detalhes</h3>
-      </div>
-
-      <div class="process-step">
-        <div class="number">05</div>
-        <h3>Momento</h3>
-      </div>
-
-      <div class="process-step">
-        <div class="number">06</div>
-        <h3>Memória</h3>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section id="portfolio">
-
-    <div class="section-title">
-      <span>Histórias que já vivemos</span>
-      <h2>Portfolio</h2>
+      <h3>
+        Detalhes
+      </h3>
 
       <p>
-        Cada celebração tem uma história.
-        Aqui ficam algumas das que tivemos o privilégio de acompanhar.
+        São os pequenos detalhes que tornam tudo inesquecível.
       </p>
-    </div>
-
-    <div class="portfolio-grid">
-
-      <div class="portfolio-placeholder">
-        Em breve
-      </div>
-
-      <div class="portfolio-placeholder">
-        Em breve
-      </div>
-
-      <div class="portfolio-placeholder">
-        Em breve
-      </div>
 
     </div>
 
-  </section>
 
+    <div class="value">
 
-  <section class="team">
+      <div class="value-number">05</div>
 
-    <div class="section-title">
-      <span>Por trás da Amora</span>
-      <h2>Há pessoas.</h2>
-    </div>
-
-    <div class="team-text">
+      <h3>
+        União
+      </h3>
 
       <p>
-        Somos uma equipa com energia, criatividade e vontade
-        de fazer acontecer.
+        Pequenas partes que, juntas, formam algo único.
       </p>
 
-      <br>
+    </div>
+
+
+    <div class="value">
+
+      <div class="value-number">06</div>
+
+      <h3>
+        Memórias
+      </h3>
 
       <p>
-        Gostamos de ouvir, imaginar, planear e encontrar soluções.
-        Porque acreditamos que cada celebração deve ter identidade
-        própria e que são os pequenos detalhes que transformam
-        um momento numa memória.
+        Momentos que ficam. Histórias que duram.
       </p>
 
-      <div class="signature">
-        Não queremos fazer igual.<br>
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     WEDDINGS
+========================= -->
+
+<section class="weddings" id="weddings">
+
+  <div class="section-title">
+
+    <span class="small">
+      Casamentos
+    </span>
+
+    <h2>
+      Weddings
+    </h2>
+
+    <div class="title-line"></div>
+
+  </div>
+
+
+  <div class="wedding-layout">
+
+
+    <!-- FUTURA FOTOGRAFIA -->
+
+    <div class="image-placeholder">
+
+      Fotografia<br>
+      do vosso trabalho
+
+    </div>
+
+
+    <div class="wedding-content">
+
+      <h3>
+        Do primeiro sonho<br>
+        ao último detalhe.
+      </h3>
+
+      <p>
+
+        Acompanhamos os noivos ao longo de todo o processo,
+        desde o planeamento inicial até ao grande dia.
+
+      </p>
+
+
+      <ul class="service-list">
+
+        <li>Wedding Planning</li>
+
+        <li>Planeamento integral</li>
+
+        <li>Planeamento parcial</li>
+
+        <li>Coordenação do dia</li>
+
+        <li>Design & Concept</li>
+
+        <li>Gestão de fornecedores</li>
+
+        <li>Styling & decoração</li>
+
+        <li>Organização de convidados</li>
+
+        <li>Planeamento e desenvolvimento do espaço</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     EVENTS
+========================= -->
+
+<section class="events" id="events">
+
+  <div class="section-title">
+
+    <span class="small">
+      Celebrações
+    </span>
+
+    <h2>
+      Events
+    </h2>
+
+    <div class="title-line"></div>
+
+  </div>
+
+
+  <div class="events-layout">
+
+
+    <div class="events-content">
+
+      <h3>
+        Cada celebração<br>
+        é única.
+      </h3>
+
+      <p>
+
+        Criamos experiências pensadas para serem vividas
+        e recordadas, sempre com identidade própria.
+
+      </p>
+
+
+      <ul class="event-types">
+
+        <li>Aniversários</li>
+
+        <li>Batizados</li>
+
+        <li>Jantares especiais</li>
+
+        <li>Baby showers</li>
+
+        <li>Festas privadas</li>
+
+        <li>Celebrações familiares</li>
+
+        <li>Eventos personalizados</li>
+
+      </ul>
+
+    </div>
+
+
+    <!-- FUTURA FOTOGRAFIA -->
+
+    <div class="event-image">
+
+      Fotografia<br>
+      de eventos
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SERVIÇOS COMPLEMENTARES
+========================= -->
+
+<section class="extras" id="extras">
+
+
+  <div class="section-title">
+
+    <span class="small">
+      Para além do grande dia
+    </span>
+
+    <h2>
+      Serviços Complementares
+    </h2>
+
+    <div class="title-line"></div>
+
+  </div>
+
+
+  <p class="extras-intro">
+
+    Porque a experiência pode ir muito além da celebração.
+    Disponibilizamos soluções complementares pensadas para
+    tornar o momento ainda mais completo, confortável e memorável.
+
+  </p>
+
+
+  <div class="extras-grid">
+
+
+    <div class="extra">
+
+      <div class="extra-icon">
+        01
+      </div>
+
+      <h3>
+        Hostesses
+      </h3>
+
+      <p>
+        Receção e acompanhamento dos convidados,
+        garantindo uma chegada organizada e acolhedora.
+      </p>
+
+    </div>
+
+
+    <div class="extra">
+
+      <div class="extra-icon">
+        02
+      </div>
+
+      <h3>
+        Honeymoon
+      </h3>
+
+      <p>
+        Planeamento da lua de mel e experiências
+        pensadas para prolongar a celebração.
+      </p>
+
+    </div>
+
+
+    <div class="extra">
+
+      <div class="extra-icon">
+        03
+      </div>
+
+      <h3>
+        Shuttle Services
+      </h3>
+
+      <p>
+        Soluções de transporte para garantir
+        deslocações cómodas e tranquilas.
+      </p>
+
+    </div>
+
+
+    <div class="extra">
+
+      <div class="extra-icon">
+        04
+      </div>
+
+      <h3>
+        Experiences
+      </h3>
+
+      <p>
+        Experiências personalizadas para os noivos
+        e convidados, antes ou depois do grande dia.
+      </p>
+
+    </div>
+
+
+    <div class="extra">
+
+      <div class="extra-icon">
+        05
+      </div>
+
+      <h3>
+        Babysitting & Kids Area
+      </h3>
+
+      <p>
+        Soluções para os mais pequenos,
+        para que toda a família possa desfrutar.
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+  <p class="extras-intro" style="margin-top:45px;">
+
+    Todos os serviços complementares são personalizados
+    e orçamentados de acordo com as necessidades de cada celebração.
+
+  </p>
+
+
+</section>
+
+
+<!-- =========================
+     PROCESSO
+========================= -->
+
+<section class="process">
+
+  <div class="section-title">
+
+    <span class="small">
+      O nosso processo
+    </span>
+
+    <h2>
+      Do sonho à memória
+    </h2>
+
+    <div class="title-line"></div>
+
+  </div>
+
+
+  <div class="process-grid">
+
+
+    <div class="process-step">
+
+      <div class="process-number">
+        01
+      </div>
+
+      <h3>
+        Ideia
+      </h3>
+
+      <p>
+        Conversamos.<br>
+        Ouvimos.<br>
+        Imaginamos.
+      </p>
+
+    </div>
+
+
+    <div class="process-step">
+
+      <div class="process-number">
+        02
+      </div>
+
+      <h3>
+        Conceito
+      </h3>
+
+      <p>
+        Damos identidade<br>
+        à ideia.
+      </p>
+
+    </div>
+
+
+    <div class="process-step">
+
+      <div class="process-number">
+        03
+      </div>
+
+      <h3>
+        Planeamento
+      </h3>
+
+      <p>
+        Organizamos<br>
+        tudo o que é necessário.
+      </p>
+
+    </div>
+
+
+    <div class="process-step">
+
+      <div class="process-number">
+        04
+      </div>
+
+      <h3>
+        Detalhes
+      </h3>
+
+      <p>
+        Pensamos naquilo<br>
+        que muitas vezes ninguém vê.
+      </p>
+
+    </div>
+
+
+    <div class="process-step">
+
+      <div class="process-number">
+        05
+      </div>
+
+      <h3>
+        Momento
+      </h3>
+
+      <p>
+        Coordenamos<br>
+        para que tudo aconteça.
+      </p>
+
+    </div>
+
+
+    <div class="process-step">
+
+      <div class="process-number">
+        06
+      </div>
+
+      <h3>
+        Memória
+      </h3>
+
+      <p>
+        Fica a história.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PORTFOLIO
+========================= -->
+
+<section class="portfolio" id="portfolio">
+
+  <div class="section-title">
+
+    <span class="small">
+      Histórias que queremos contar
+    </span>
+
+    <h2>
+      Portfolio
+    </h2>
+
+    <div class="title-line"></div>
+
+    <p>
+
+      Cada celebração começa antes do primeiro detalhe
+      e continua muito depois do último momento.
+
+    </p>
+
+  </div>
+
+
+  <div class="portfolio-grid">
+
+
+    <div class="portfolio-box">
+      Fotografia
+    </div>
+
+
+    <div class="portfolio-box">
+      Fotografia
+    </div>
+
+
+    <div class="portfolio-box">
+      Fotografia
+    </div>
+
+
+  </div>
+
+
+  <p class="portfolio-note">
+
+    Em breve, algumas das histórias da AMORA.
+
+  </p>
+
+</section>
+
+
+<!-- =========================
+     SOBRE NÓS
+========================= -->
+
+<section class="about-us">
+
+  <div class="section-title">
+
+    <span class="small">
+      Por trás da Amora
+    </span>
+
+    <h2>
+      Há pessoas.
+    </h2>
+
+    <div class="title-line"></div>
+
+  </div>
+
+
+  <div class="about-us-content">
+
+    <p>
+
+      Somos uma equipa com energia, criatividade
+      e vontade de fazer acontecer.
+
+    </p>
+
+    <br>
+
+    <p>
+
+      Gostamos de ouvir, imaginar, planear e encontrar soluções.
+
+      Acreditamos que cada celebração deve ter identidade própria
+      e que são os pequenos detalhes que transformam um momento
+      numa memória.
+
+    </p>
+
+
+    <div class="quote">
+
+      Não queremos fazer igual.<br>
+
+      <strong>
         Queremos marcar a diferença.
-      </div>
+      </strong>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <section id="contacto" class="contact">
+<!-- =========================
+     CONTACTO
+========================= -->
 
-    <div class="section-title">
-      <span>Vamos começar?</span>
-      <h2>Vamos criar?</h2>
-    </div>
+<section class="contact" id="contacto">
 
-    <div class="contact-text">
 
-      <p>
-        Conte-nos a sua ideia.
-        Nós tratamos de transformar o sonho em realidade.
-      </p>
+  <div class="section-title">
 
-      <a
-        href="mailto:ola@amora-weddings-events.pt"
-        class="button"
-      >
-        Falar connosco
-      </a>
+    <span class="small">
+      Vamos começar?
+    </span>
 
-    </div>
+    <h2>
+      Vamos <span>criar?</span>
+    </h2>
 
-  </section>
+    <div class="title-line"></div>
+
+  </div>
+
+
+  <p>
+
+    Tem uma ideia, um sonho ou uma celebração
+    para tornar especial?
+
+    Conte-nos.
+
+  </p>
+
+
+  <a
+    href="mailto:ola@amora-weddings-events.pt"
+    class="button"
+  >
+
+    Falar connosco
+
+  </a>
+
+
+</section>
+
 
 </main>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-  <div class="footer-logo">AMORA</div>
+  <div class="footer-logo">
+    AMORA
+  </div>
 
-  <p>WEDDING PLANNER & EVENTS</p>
+  <div class="footer-subtitle">
+    WEDDING PLANNER & EVENTS
+  </div>
 
-  <p>
+  <div class="footer-copy">
     Pequenos detalhes, grandes histórias.
-  </p>
+  </div>
 
 </footer>
+
 
 </body>
 </html>
